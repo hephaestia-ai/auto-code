@@ -27,7 +27,7 @@ setup(
     python_requires=">=3.10",
     entry_points={
         "console_scripts": [
-            "auto-bot=cli.cli:main",
+            "auto-bot=cli.main:main",
         ],
     },
     include_package_data=True,
