@@ -15,6 +15,7 @@ class AutoCode(CoreAssistant):
     """
     def __init__(self):
         super().__init__(assistant_name="Python Code Refinement")
+        self.temperature = 0.3 # Leave a little room for inference
         self.description = "Helpful python code generation and optimization bot"
         self.instructions = """
             No chat response needed, just respond with the code. No backticks needed, will be used for overwriting other .py files.
@@ -92,7 +93,7 @@ class AutoCode(CoreAssistant):
             logging.error(f"Error writing to file {file_path}: {e}")
             return False
 
-    def process_files(self, file_paths: List[str]) -> None:
+    def refine(self, file_paths: List[str]) -> None:
         """
         Processes each file by refining its content using the assistant.
 
@@ -107,3 +108,9 @@ class AutoCode(CoreAssistant):
 
 if __name__ == "__main__":
     AutoCode()
+
+    # Example: 
+
+    # auto_code = AutoCode()
+    # file_paths=auto_code.get_files('src/cli', '.py')
+    # auto_code.refine(file_paths)
