@@ -11,20 +11,35 @@ class AutoCode(CoreAssistant):
     Auto Code
     ---------
 
-    Programming assistant 
+    A programming assistant for generating and optimizing Python code.
+    Usage::
+
+        >>> file_paths = auto_code.get_files('src/cli', '.py')
+        >>> auto_code.refine(file_paths)
     """
     def __init__(self):
         super().__init__(assistant_name="Python Code Refinement")
-        self.temperature = 0.3 # Leave a little room for inference
-        self.description = "Helpful python code generation and optimization bot"
-        self.instructions = """
-            No chat response needed, just respond with the code. No backticks needed, will be used for overwriting other .py files.
-            Refine every file to include python development best practices.
-            Ensure they are optimized. Update them to include new features or libraries
-            that would improve functionality. Add assertions and commenting where necessary.
-        """
+        self.temperature = 0.3  # Leave a little room for inference
+        self.description = "Helpful Python code generation and optimization bot"
+        self.instructions = (
+            "No chat response needed, just respond with the code. No backticks needed, "
+            "will be used for overwriting other .py files. Refine every file to include "
+            "Python development best practices. Ensure they are optimized. Update them to "
+            "include new features or libraries that would improve functionality. Add assertions "
+            "and commenting where necessary."
+        )
+
     @error_handler
     def generate(self, prompt: str) -> str:
+        """
+        Generates refined code based on the provided prompt.
+
+        Args:
+            prompt (str): The original code to refine.
+
+        Returns:
+            str: The refined code.
+        """
         completion = self.client.chat.completions.create(
             model=self.model,
             temperature=self.temperature,
@@ -36,12 +51,12 @@ class AutoCode(CoreAssistant):
             n=1,
         )
         return completion.choices[0].message.content
-    
+
     @error_handler
     def get_files(self, directory: str, extension: str) -> List[str]:
         """
-        Recursively searches a directory for a given file type.
-        
+        Recursively searches a directory for files with a given extension.
+
         Args:
             directory (str): The directory to search in.
             extension (str): The file extension to search for.
@@ -104,13 +119,10 @@ class AutoCode(CoreAssistant):
             original_content = self.get_file_content(file_path)
             if original_content is not None:
                 refined_content = self.generate(prompt=original_content)
-                self.write_to_file(file_path, refined_content)
+                if self.write_to_file(file_path, refined_content):
+                    logging.info(f"Successfully refined and wrote to {file_path}")
+                else:
+                    logging.error(f"Failed to write refined content to {file_path}")
 
 if __name__ == "__main__":
     AutoCode()
-
-    # Example: 
-
-    # auto_code = AutoCode()
-    # file_paths=auto_code.get_files('src/cli', '.py')
-    # auto_code.refine(file_paths)
