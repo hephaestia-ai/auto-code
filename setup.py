@@ -13,8 +13,8 @@ def read_requirements():
 
 setup(
     name="cowgirl-ai-auto-code",
-    version="1.1.1",
-    description="Cowgirl AI - Auto Load",
+    version="1.1.2",
+    description="Cowgirl AI - Auto Code",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/Cowgirl-AI/auto-code",
@@ -27,7 +27,7 @@ setup(
     python_requires=">=3.10",
     entry_points={
         "console_scripts": [
-            "auto-bot=cli.main:main",
+            "cowgirl-ai-auto-code=cli.main:main",
         ],
     },
     include_package_data=True,
