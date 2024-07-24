@@ -1,0 +1,3 @@
+[pytest]
+addopts = --maxfail=2 --durations=10
+testpaths = tests

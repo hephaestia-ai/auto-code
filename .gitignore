@@ -1,0 +1,14 @@
+.venv
+.vscode
+**/__pycache__
+**/.pytest_cache
+
+
+# For Vector ID storage
+*.egg-info
+dist
+
+node_modules/
+build/
+
+# temporary or under development:
