@@ -28,4 +28,4 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest tests --rootdir='./src' --ignore='./src' --disable-warnings
+        pytest tests --rootdir='./src' --disable-warnings
