@@ -1,7 +1,7 @@
 import argparse
 import os
 import json
-from src.auto_code.auto_code import AutoCode
+from auto_code.auto_code import AutoCode
 
 TEMP_FILE = 'temp_files.json'
 
