@@ -17,7 +17,7 @@ setup(
     description="Cowgirl AI - Auto Load",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/Cowgirl-AI/core",
+    url="https://github.com/Cowgirl-AI/auto-code",
     author="Tera Earlywine",
     author_email="dev@teraearlywine.com",
     # license='MIT',

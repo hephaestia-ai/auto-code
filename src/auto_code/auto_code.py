@@ -3,7 +3,6 @@ from typing import List, Union
 from core.assistant.core_assistant import CoreAssistant
 from cowgirl_ai.error_handler import error_handler
 from cowgirl_ai.search.search import Search
-# from core.assistant.core_assistant import CoreAssistant
 
 logging.basicConfig(level=logging.INFO, datefmt="%Y-%m-%d", format="%(levelname)s - %(message)s")
 
