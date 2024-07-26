@@ -9,7 +9,9 @@ def main():
     subparsers = parser.add_subparsers(dest='command', required=True)
 
     parser_refine = subparsers.add_parser('refine', 
-                            help='Get list of files in directory with given extension or a single file, sends to refinery for updates')
+                            help='Get list of files in directory with   \
+                                    given extension or a single file, sends \
+                                    to refinery for updates')
     
     parser_refine.add_argument('--dir', type=str, help='Directory containing files')
     parser_refine.add_argument('--ext', type=str, help='File extension to load')
