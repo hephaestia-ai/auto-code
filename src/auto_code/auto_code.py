@@ -19,13 +19,14 @@ class AutoCode(CoreAssistant):
     """
     def __init__(self):
         super().__init__(assistant_name="Python Code Refinement")
-        self.temperature = 0.3  # Leave a little room for inference
-        self.description = "Helpful Python code generation and optimization bot"
+        self.temperature = 0.1  # Leave a little room for inference
+        self.description = "Python code generation and optimization bot. Just write code"
         self.instructions = (
             "No chat response needed, just respond with the code. No backticks needed"
+            "Ignore any __init__.py "
             "Will be used for overwriting other .py files"
             "Refine every file to include OOP best practices"
-            "Python and SQL development best practices. Ensure files are optimized"
+            "Python development best practices. Ensure files are optimized"
             "Include new features or libraries that would improve functionality. Add assertions"
             "and commenting where necessary."
         )
