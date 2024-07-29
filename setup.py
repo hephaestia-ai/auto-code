@@ -11,7 +11,7 @@ def read_requirements():
 
 setup(
     name="cowgirl-ai-auto-code",
-    version="1.2.0",
+    version="1.3.0",
     description="Cowgirl AI - Auto Code",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
@@ -27,6 +27,7 @@ setup(
             "cowgirl-ai-auto-code=cli.main:main", 
             "front_end=cli.front_end:main",   # front_end refine --file='test.js'
             "back_end=cli.back_end:main",     # back_end refine --file='test.py'
+            "qa=cli.qa:main"                  # qa refine --file='test.py'
         ],
     },
     include_package_data=True,
