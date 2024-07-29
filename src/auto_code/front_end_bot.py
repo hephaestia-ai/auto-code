@@ -6,27 +6,25 @@ from cowgirl_ai.search.search import Search
 
 logging.basicConfig(level=logging.INFO, datefmt="%Y-%m-%d", format="%(levelname)s - %(message)s")
 
-class AutoCode(CoreAssistant):
+class FrontEndBot(CoreAssistant):
     """
     Auto Code
     ---------
 
-    A programming assistant for generating and optimizing Python code.
-    Usage::
-
-        >>> file_paths = auto_code.get_files('src/cli', '.py')
-        >>> auto_code.refine(file_paths)
+    A programming assistant for generating and optimizing front end code.
     """
     def __init__(self):
-        super().__init__(assistant_name="Python Code Refinement")
+        super().__init__(assistant_name="Front End Code Refinement")
         self.temperature = 0  # Leave a little room for inference
-        self.description = "Python code generation and optimization bot. Just write code"
+        self.description = "Front end and UI code generation and optimization bot. Just write code"
         self.instructions = (
+            "Specialized language is python, javascript and sql"
+            "Design is modern sleek and dark mode"
             "No chat response needed, just respond with the code. No backticks needed"
-            "Ignore any __init__.py "
-            "Will be used for overwriting other .py files"
+            "Ignore any initialization files"
+            "Will be used for overwriting other frontend UI/UX files"
             "Refine every file to include OOP best practices"
-            "Python development best practices. Ensure files are optimized"
+            "Include software development best practices. Ensure files are optimized"
             "Include new features or libraries that would improve functionality. Add assertions"
             "and commenting where necessary."
         )
@@ -127,4 +125,4 @@ class AutoCode(CoreAssistant):
                     logging.error(f"Failed to write refined content to {file_path}")
 
 if __name__ == "__main__":
-    AutoCode()
+    FrontEndBot()
