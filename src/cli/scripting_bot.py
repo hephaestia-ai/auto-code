@@ -1,6 +1,6 @@
 import argparse
 import os
-from src.auto_code.scripting_bot import ScriptingBot
+from auto_code.scripting_bot import ScriptingBot
 
 
 def main():
