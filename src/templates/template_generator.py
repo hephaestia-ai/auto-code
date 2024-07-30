@@ -93,14 +93,14 @@ class BotTemplateGenerator:
         print(f"Generated file: {file_path}")
 
 if __name__ == "__main__":
-    BotTemplateGenerator()
+    # BotTemplateGenerator()
     # Ensure the template files exist before initializing the generator
     # assert os.path.isfile('src/templates/auto_code_bot.jinja2'), "Template file 'src/templates/auto_code_bot.jinja2' does not exist."
     
     # Initialize generators with appropriate template files
-    # auto_bot_generator = BotTemplateGenerator(template_file='src/templates/auto_code_bot.jinja2')
-    # auto_bot_generator.generate_auto_bots('JinjaRefinement', 'jinja_refinement')
+    auto_bot_generator = BotTemplateGenerator(template_file='src/templates/auto_code_bot.jinja2')
+    auto_bot_generator.generate_auto_bots('MarkdownBot', 'md_bot')
     
     # Uncomment to generate CLI endpoint code
-    # cli_generator = BotTemplateGenerator(template_file='src/templates/endpoint_cli_tool.jinja2')
-    # cli_generator.generate_cli_endpoint('JinjaRefinement', 'jinja_refinement')
+    cli_generator = BotTemplateGenerator(template_file='src/templates/endpoint_cli_tool.jinja2')
+    cli_generator.generate_cli_endpoint('MarkdownBot', 'md_bot')

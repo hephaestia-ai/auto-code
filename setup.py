@@ -31,7 +31,8 @@ setup(
             "qa=cli.qa:main",                  # qa refine --file='test.py'
             "script=cli.scripting_bot:main",   # script refine --file='test.sh'
             "html_css=cli.html_css:main",      # html_css refine --file='test.html'
-            "network=cli.network:main"         # network refine --file='test.py'
+            "network=cli.network:main",        # network refine --file='test.py'
+            "md=cli.md_bot:main"               # md refine --file='test.md'
         ],
     },
     include_package_data=True,

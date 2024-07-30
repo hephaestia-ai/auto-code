@@ -1,9 +1,9 @@
-{% set class_name = base_class_name %}
-{% set file_name = base_file_name %}
+
+
 
 import argparse
 import os
-from auto_code.{{ file_name }} import {{ class_name }}
+from src.auto_code.md_bot import MarkdownBot
 
 
 def main():
@@ -20,7 +20,7 @@ def main():
 
     args = parser.parse_args()
 
-    auto_code = {{ class_name }}() # Call class 
+    auto_code = MarkdownBot() # Call class 
 
     if args.command == 'refine':
 
