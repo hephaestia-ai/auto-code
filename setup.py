@@ -28,8 +28,8 @@ setup(
             "front_end=cli.front_end:main",   # front_end refine --file='test.js'
             "back_end=cli.back_end:main",     # back_end refine --file='test.py'
             "qa=cli.qa:main",                  # qa refine --file='test.py'
-            # "render_bot=cli.render_bot:main",  # render_bot --create='BotName'
             "script=cli.scripting_bot:main"    # script refine --file='test.sh'
+            "html_css=cli.html_css:main"       # html_css refine --file='test.html'
         ],
     },
     include_package_data=True,

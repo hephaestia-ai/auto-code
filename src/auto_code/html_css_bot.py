@@ -3,31 +3,30 @@ from typing import List, Union
 from core.assistant.core_assistant import CoreAssistant
 from cowgirl_ai.error_handler import error_handler
 from cowgirl_ai.search.search import Search
-from jinja2 import Template
-import os
 
 logging.basicConfig(level=logging.INFO, datefmt="%Y-%m-%d", format="%(levelname)s - %(message)s")
 
-class CodeRefinementBot(CoreAssistant):
+class HtmlCssBot(CoreAssistant):
     """
     Auto Code
     ---------
 
-    A programming assistant for generating and optimizing code.
+    A programming assistant for generating and optimizing Python code.
+    Usage::
+
+        >>> file_paths = auto_code.get_files('src/cli', '.py')
+        >>> auto_code.refine(file_paths)
     """
-    def __init__(self, assistant_name: str):
-        super().__init__(assistant_name=assistant_name)
+    def __init__(self):
+        super().__init__(assistant_name="HTML and CSS Code Refinement")
         self.temperature = 0  # Leave a little room for inference
-        self.description = "Code generation and optimization bot. Just write code."
+        self.description = "HTML and CSS generation and optimization bot. Just write code"
         self.instructions = (
-            "Specialized language is python, javascript, and sql. "
-            "Design is modern sleek and dark mode. "
-            "No chat response needed, just respond with the code. No backticks needed. "
-            "Ignore any initialization files. "
-            "Will be used for overwriting other backend related files. "
-            "Refine every file to include OOP best practices. "
-            "Include software development best practices. Ensure files are optimized. "
-            "Include new features or libraries that would improve functionality. Add assertions "
+            "No chat response needed, just respond with the code. No backticks needed"
+            "You are also very good at creating sleek, dynamic and modern SEO optimized UI/UX"
+            "Will be used for overwriting other HTML and CSS files"
+            "Python development best practices. Ensure files are optimized"
+            "Include new features or libraries that would improve functionality. Add assertions"
             "and commenting where necessary."
         )
 
@@ -126,81 +125,5 @@ class CodeRefinementBot(CoreAssistant):
                 else:
                     logging.error(f"Failed to write refined content to {file_path}")
 
-def create_bot_file(class_name: str) -> None:
-    """
-    Creates a new Python file with the specified class name.
-
-    Args:
-        class_name (str): The name of the class to be included in the file.
-    """
-    template_str = """
-import logging
-from typing import List, Union
-from core.assistant.core_assistant import CoreAssistant
-from cowgirl_ai.error_handler import error_handler
-from cowgirl_ai.search.search import Search
-
-logging.basicConfig(level=logging.INFO, datefmt="%Y-%m-%d", format="%(levelname)s - %(message)s")
-
-class {{ class_name }}(CoreAssistant):
-    \"\"\"
-    Auto Code
-    ---------
-
-    A programming assistant for generating and optimizing code.
-    \"\"\"
-    def __init__(self):
-        super().__init__(assistant_name="{{ class_name }} Code Refinement")
-        self.temperature = 0
-        self.description = "Code generation and optimization bot. Just write code."
-        self.instructions = (
-            "Specialized language is python, javascript, and sql. "
-            "Design is modern sleek and dark mode. "
-            "No chat response needed, just respond with the code. No backticks needed. "
-            "Ignore any initialization files. "
-            "Will be used for overwriting other backend related files. "
-            "Refine every file to include OOP best practices. "
-            "Include software development best practices. Ensure files are optimized. "
-            "Include new features or libraries that would improve functionality. Add assertions "
-            "and commenting where necessary."
-        )
-
-    @error_handler
-    def generate(self, prompt: str) -> str:
-        # Implementation remains the same
-        pass
-
-    @error_handler
-    def get_files(self, directory: str, extension: str) -> List[str]:
-        # Implementation remains the same
-        pass
-
-    @staticmethod
-    def get_file_content(file_path: str) -> Union[str, None]:
-        # Implementation remains the same
-        pass
-
-    @staticmethod
-    def write_to_file(file_path: str, data: str, mode: str = 'w') -> bool:
-        # Implementation remains the same
-        pass
-
-    def refine(self, file_paths: List[str]) -> None:
-        # Implementation remains the same
-        pass
-
 if __name__ == "__main__":
-    {{ class_name }}()
-    """
-    template = Template(template_str)
-    rendered_code = template.render(class_name=class_name)
-    
-    file_path = os.path.join('src', 'auto_code', f"{class_name.lower()}.py")
-    with open(file_path, 'w', encoding='utf-8') as f:
-        f.write(rendered_code)
-
-if __name__=="__main__":
-    CodeRefinementBot()
-
-# Example usage
-# create_bot_file("ScriptingBot")
+    HtmlCssBot()
