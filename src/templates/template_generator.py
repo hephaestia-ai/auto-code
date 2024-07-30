@@ -6,8 +6,8 @@ class BotTemplateGenerator:
     Bot Template Generator
     ----------------------
     
-    Renders templates for CLI AI assistant bots based on relative class and file name
-    Template instructions should provide params related to the assistant tasks
+    Renders templates for CLI AI assistant bots based on relative class and file name.
+    Template instructions should provide params related to the assistant tasks.
 
     EXAMPLE:
     # Initialize generators with appropriate template files
@@ -29,6 +29,7 @@ class BotTemplateGenerator:
         if template_string:
             self.template = Template(template_string)
         elif template_file:
+            self.template_file = template_file
             self.load_template_from_file(template_file)
         else:
             raise ValueError("Either template_string or template_file must be provided.")
@@ -58,9 +59,9 @@ class BotTemplateGenerator:
         Generate auto bots code using the specified class name.
         
         :param base_class_name: The name of the class to be used in the template.
+        :param base_file_name: The name of the file to be used in the template.
         """
         try:
-            self.load_template_from_file('./auto_code_bot.jinja2')
             rendered_code = self.render(base_class_name=base_class_name)
             self.write_to_file(f'src/auto_code/{base_file_name.lower()}_bot.py', rendered_code)
         except Exception as e:
@@ -74,7 +75,6 @@ class BotTemplateGenerator:
         :param base_file_name: The name of the file to be used in the template.
         """
         try:
-            self.load_template_from_file('./endpoint_cli_tool.jinja2')
             rendered_code = self.render(base_file_name=base_file_name, base_class_name=base_class_name)
             self.write_to_file(f'src/cli/{base_file_name.lower()}.py', rendered_code)
         except Exception as e:
@@ -94,12 +94,13 @@ class BotTemplateGenerator:
 
 if __name__ == "__main__":
     BotTemplateGenerator()
-    # EXAMPLE:
-
+    # Ensure the template files exist before initializing the generator
+    # assert os.path.isfile('src/templates/auto_code_bot.jinja2'), "Template file 'src/templates/auto_code_bot.jinja2' does not exist."
+    
     # Initialize generators with appropriate template files
-    # auto_bot_generator = BotTemplateGenerator(template_file='./auto_code_bot.jinja2')
+    # auto_bot_generator = BotTemplateGenerator(template_file='src/templates/auto_code_bot.jinja2')
     # auto_bot_generator.generate_auto_bots('JinjaRefinement', 'jinja_refinement')
     
-    # # Generate CLI endpoint code
-    # cli_generator = BotTemplateGenerator(template_file='./endpoint_cli_tool.jinja2')
+    # Uncomment to generate CLI endpoint code
+    # cli_generator = BotTemplateGenerator(template_file='src/templates/endpoint_cli_tool.jinja2')
     # cli_generator.generate_cli_endpoint('JinjaRefinement', 'jinja_refinement')
