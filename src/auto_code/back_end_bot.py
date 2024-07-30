@@ -14,7 +14,7 @@ class BackEndBot(CoreAssistant):
     A programming assistant for generating and optimizing back end code.
     """
     def __init__(self):
-        super().__init__(assistant_name="Backend Team")
+        super().__init__(assistant_name="Backend Code Bot")
         self.temperature = 0  # Leave a little room for inference
         self.description = "Backend end and UI code generation and optimization bot. Just write code"
         self.instructions = (
