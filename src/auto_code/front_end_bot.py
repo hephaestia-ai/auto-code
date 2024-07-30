@@ -19,9 +19,9 @@ class FrontEndBot(CoreAssistant):
         self.description = "Front end and UI code generation and optimization bot. Just write code"
         self.instructions = (
             "Specialized language is python, javascript and sql"
-            "Design is modern sleek and dark mode"
+            "Try to keep as close to TODO or FIX notes as possible"
+            "Theme is modern sleek and dark mode"
             "No chat response needed, just respond with the code. No backticks needed"
-            "Ignore any initialization files"
             "Will be used for overwriting other frontend UI/UX files"
             "Refine every file to include OOP best practices"
             "Include software development best practices. Ensure files are optimized"
