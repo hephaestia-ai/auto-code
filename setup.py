@@ -29,7 +29,7 @@ setup(
             "back_end=cli.back_end:main",      # back_end refine --file='test.py'
             "qa=cli.qa:main",                  # qa refine --file='test.py'
             "script=cli.scripting_bot:main",   # script refine --file='test.sh'
-            "html_css=cli.html_css:main"       # html_css refine --file='test.html'
+            "html_css=cli.html_css:main",       # html_css refine --file='test.html'
             "network=cli.network:main"         # network refine --file='test.py'
         ],
     },
