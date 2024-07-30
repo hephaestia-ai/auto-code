@@ -14,7 +14,7 @@ class FrontEndBot(CoreAssistant):
     A programming assistant for generating and optimizing front end code.
     """
     def __init__(self):
-        super().__init__(assistant_name="Front End Code Refinement")
+        super().__init__(assistant_name="Frontend Team")
         self.temperature = 0  # Leave a little room for inference
         self.description = "Front end and UI code generation and optimization bot. Just write code"
         self.instructions = (
