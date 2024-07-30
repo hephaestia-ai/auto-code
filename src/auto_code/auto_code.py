@@ -6,29 +6,29 @@ from cowgirl_ai.search.search import Search
 
 logging.basicConfig(level=logging.INFO, datefmt="%Y-%m-%d", format="%(levelname)s - %(message)s")
 
+# MAKE BASE MODEL 
 class AutoCode(CoreAssistant):
     """
     Auto Code
     ---------
 
-    A programming assistant for generating and optimizing Python code.
+    A generalized programming assistant for generating and optimizing code.
     Usage::
 
         >>> file_paths = auto_code.get_files('src/cli', '.py')
         >>> auto_code.refine(file_paths)
     """
     def __init__(self):
-        super().__init__(assistant_name="Python Code Refinement")
-        self.temperature = 0  # Leave a little room for inference
-        self.description = "Python code generation and optimization bot. Just write code"
+        super().__init__(assistant_name="General Code Refinement")
+        self.temperature = 0  # Leave some room for inference
+        self.description = "Generalized programming assistant bot for generation and optimization bot. Just write code"
         self.instructions = (
             "No chat response needed, just respond with the code. No backticks needed"
-            "Ignore any __init__.py "
-            "Will be used for overwriting other .py files"
-            "Refine every file to include OOP best practices"
-            "Python development best practices. Ensure files are optimized"
-            "Include new features or libraries that would improve functionality. Add assertions"
-            "and commenting where necessary."
+            "Focus on instruction following TODO: or FIX:"
+            "If none provided, just write comments at the end of doc to improve code"
+            "Implement using software engineering development best practices."
+            "Include new features or libraries that would improve functionality."
+            "Add assertions and logging where necessary."
         )
 
     @error_handler

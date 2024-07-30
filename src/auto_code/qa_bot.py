@@ -16,7 +16,7 @@ class QABot(CoreAssistant):
     def __init__(self):
         super().__init__(assistant_name="Quality Assurance Fixes for Code Refinement")
         self.temperature = 0  # Leave a little room for inference
-        self.description = "You are a QA bot that fixes problems in code. Just write code"
+        self.description = "You are a Quality Assurance bot that fixes problems in code. Just write code"
         self.instructions = (
             "Specialized language is python, javascript and sql"
             "Users will provide #TODO or #FIX before issues or bugs or things that need improvement"
