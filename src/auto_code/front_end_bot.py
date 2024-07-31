@@ -18,7 +18,7 @@ class FrontEndBot(CoreAssistant):
         self.temperature = 0  # Leave a little room for inference
         self.description = "Front end and UI code generation and optimization bot. Just write code"
         self.instructions = (
-            "Specialized language is python, javascript and sql"
+            "Specialized language is javascript, html and css. can do python things"
             "Try to keep as close to TODO or FIX notes as possible"
             "Theme is modern sleek and dark mode"
             "No chat response needed, just respond with the code. No backticks needed"
