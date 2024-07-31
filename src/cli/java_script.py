@@ -1,9 +1,9 @@
-{% set class_name = base_class_name %}
-{% set file_name = base_file_name %}
+
+
 
 import argparse
 import os
-from auto_code.{{ file_name }}_bot import {{ class_name }}
+from auto_code.java_script_bot import SeniorJavaScriptEngineer
 
 
 def main():
@@ -20,7 +20,7 @@ def main():
 
     args = parser.parse_args()
 
-    auto_code = {{ class_name }}() # Call class 
+    auto_code = SeniorJavaScriptEngineer() # Call class 
 
     if args.command == 'refine':
 

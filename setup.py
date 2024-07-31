@@ -11,7 +11,7 @@ def read_requirements():
 
 setup(
     name="cowgirl-ai-auto-code",
-    version="1.4.13",
+    version="1.5.0",
     description="Cowgirl AI - Auto Code",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
@@ -32,7 +32,8 @@ setup(
             "script=cli.scripting_bot:main",        # script refine --file='test.sh'
             "html=cli.html_css:main",               # html refine --file='test.html'
             "network=cli.network:main",             # network refine --file='test.py'
-            "md=cli.md_bot:main",                    # md refine --file='test.md'
+            "md=cli.md_bot:main",                   # md refine --file='test.md'
+            "js=cli.java_script:main",              # js refine --file='test.js'
         ],
     },
     include_package_data=True,
