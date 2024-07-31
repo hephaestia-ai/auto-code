@@ -99,8 +99,8 @@ if __name__ == "__main__":
     
     # Initialize generators with appropriate template files
     auto_bot_generator = BotTemplateGenerator(template_file='src/templates/auto_code_bot.jinja2')
-    auto_bot_generator.generate_auto_bots('MarkdownBot', 'md_bot')
+    auto_bot_generator.generate_auto_bots('GoogleWebClientBot', 'google_web_client_bot')
     
     # Uncomment to generate CLI endpoint code
     cli_generator = BotTemplateGenerator(template_file='src/templates/endpoint_cli_tool.jinja2')
-    cli_generator.generate_cli_endpoint('MarkdownBot', 'md_bot')
+    cli_generator.generate_cli_endpoint('GoogleWebClientBot', 'google_web_client_bot')
