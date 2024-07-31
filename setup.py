@@ -33,7 +33,6 @@ setup(
             "html=cli.html_css:main",               # html refine --file='test.html'
             "network=cli.network:main",             # network refine --file='test.py'
             "md=cli.md_bot:main",                    # md refine --file='test.md'
-            "google_bot=cli.google_web_client:main" # google_bot refine --file='test.js'
         ],
     },
     include_package_data=True,
