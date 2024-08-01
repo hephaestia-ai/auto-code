@@ -3,7 +3,7 @@
 
 import argparse
 import os
-from src.auto_code.md_bot import MarkdownBot
+from auto_code.md_bot import MarkdownBot
 
 
 def main():
