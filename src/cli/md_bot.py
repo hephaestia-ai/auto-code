@@ -1,6 +1,3 @@
-
-
-
 import argparse
 import os
 from auto_code.md_bot import MarkdownBot
