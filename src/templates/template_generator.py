@@ -99,8 +99,8 @@ if __name__ == "__main__":
     
     # Initialize generators with appropriate template files
     auto_bot_generator = BotTemplateGenerator(template_file='src/templates/auto_code_bot.jinja2')
-    auto_bot_generator.generate_auto_bots('SeniorJavaScriptEngineer', 'java_script')
+    auto_bot_generator.generate_auto_bots('SeniorAnalyticsEngineer', 'sql_dbt_yml')
     
     # Uncomment to generate CLI endpoint code
     cli_generator = BotTemplateGenerator(template_file='src/templates/endpoint_cli_tool.jinja2')
-    cli_generator.generate_cli_endpoint('SeniorJavaScriptEngineer', 'java_script')
+    cli_generator.generate_cli_endpoint('SeniorAnalyticsEngineer', 'sql_dbt_yml')

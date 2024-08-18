@@ -11,7 +11,7 @@ def read_requirements():
 
 setup(
     name="cowgirl-ai-auto-code",
-    version="1.5.1",
+    version="1.5.2",
     description="Cowgirl AI - Auto Code",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
@@ -34,6 +34,7 @@ setup(
             "network=cli.network:main",             # network refine --file='test.py'
             "md=cli.md_bot:main",                   # md refine --file='test.md'
             "js=cli.java_script:main",              # js refine --file='test.js'
+            "dbt-bot=cli.sql_dbt_yml:main"          # dbt-bot refine --file='test.yml' or 'test.sql'
         ],
     },
     include_package_data=True,
